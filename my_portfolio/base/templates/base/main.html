@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <title>Pawan Gupta | Fullstack Python Developer</title>
+  <meta name="description" content="A Backend focused Full Stack Python/Django Developer building the Backend of Websites and Web Applications that leads to the success of the overall product" />
+
+  <meta name="author" content="Pawan Gupta" />
+
+  <meta
+      name="google-site-verification"
+      content="wX2xdkxqjrC4rA2EM-9bbaVpiEEFG8ae5azgeZDd-oo"
+    />
+
+  <meta
+    property="og:title"
+    content="Pawan Gupta | Fullstack Python Developer"
+  />
+
+
+  
+  <meta property="og:site_name" content="Pawan Gupta Portfolio Website" />
+  <meta property="og:url" content="https://PawanGupta.onrender.com/" />
+  <meta
+    property="og:description"
+    content="A Backend focused Full Stack Python/Django Developer building the Backend of Websites and Web Applications that leads to the success of the overall product"
+  />
+  <meta property="og:type" content="website" />
+  
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-QD9ESD1D9K"
+
+    ></script>
+
+
+
+  <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div onclick="window.location = '{% url 'home' %}';" class="header__logo-container">
+        <div class="header__logo-img-cont">
+          <img src="{%static 'images/pawan.jpeg'%}" alt="pawan gupta Logo Image" class="header__logo-img" />
+        </div>
+        <span class="header__logo-sub">Pawan Gupta</span>
+      </div>
+      <div class="header__main">
+        <ul class="header__links">
+          <li class="header__link-wrapper">
+            <a href="{% url 'home' %}" class="header__link"> Home </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="{% url 'home' %}#about" class="header__link">About </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="{% url 'posts' %}" class="header__link">
+              Projects
+            </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="{% url 'home' %}#contact" class="header__link"> Contact </a>
+          </li>
+        </ul>
+        <div class="header__main-ham-menu-cont">
+          <img src="{%static 'svg/ham-menu.svg'%}" alt="hamburger menu" class="header__main-ham-menu" />
+          <img src="{%static 'svg/ham-menu-close.svg'%}" alt="hamburger menu close"
+            class="header__main-ham-menu-close d-none" />
+        </div>
+      </div>
+    </div>
+    <div class="header__sm-menu">
+      <div class="header__sm-menu-content">
+        <ul class="header__sm-menu-links">
+          <li class="header__sm-menu-link">
+            <a href="{% url 'home' %}"> Home </a>
+          </li>
+
+          <li class="header__sm-menu-link">
+            <a href="{% url 'home' %}#about"> About </a>
+          </li>
+
+          <li class="header__sm-menu-link">
+            <a href="{% url 'posts' %}"> Projects </a>
+          </li>
+
+          <li class="header__sm-menu-link">
+            <a href="{% url 'home' %}#contact"> Contact </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  {% block content %}
+  <!-- content goes here -->
+  {% endblock %}
+
+
+  <footer class="main-footer">
+    <div class="main-container">
+      <div class="main-footer__upper">
+        <div class="main-footer__row main-footer__row-1">
+          <h2 class="heading heading-sm main-footer__heading-sm">
+            <span>Social</span>
+          </h2>
+          <div class="main-footer__social-cont">
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/pawan-gupta03/">
+              <img class="main-footer__icon" src="{%static 'images/linkedin-ico.png'%}" alt="icon" />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://github.com/pawangupta5071">
+              <img class="main-footer__icon" src="{%static 'images/github-ico.png'%}" alt="icon" />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://twitter.com/pawan_____gupta">
+              <img class="main-footer__icon" src="{%static 'images/twitter-ico.png'%}" alt="icon" />
+            </a>
+            
+            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/pawan_____gupta/">
+              <img class="main-footer__icon main-footer__icon--mr-none" src="{%static 'images/insta-ico.png'%}"
+                alt="icon" />
+            </a>
+          </div>
+        </div>
+        <div class="main-footer__row main-footer__row-2">
+          <h4 class="heading heading-sm text-lt">Pawan Gupta</h4>
+          <p class="main-footer__short-desc">
+            A Backend focused Python Developer building the backend of Websites and Web Applications that leads to the
+            success of the overall product.
+          </p>
+        </div>
+      </div>
+
+      <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+      <div class="main-footer__lower">
+        &copy; Copyright 2021. Made by
+        <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com">Ram Maheshwari</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{%static 'js/index.js'%}">
+    let index = "{% url 'home' %}"
+  </script>
+</body>
+
+</html>

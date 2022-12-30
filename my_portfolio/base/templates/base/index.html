@@ -1,0 +1,192 @@
+{%extends 'base/main.html'%}
+{%load static %}
+
+{% block content %}
+<section class="home-hero">
+  <div class="home-hero__content">
+    <h1 class="heading-primary">Hey, I'm Pawan Gupta</h1>
+    <div class="home-hero__info">
+      <p class="text-primary">
+        A Backend focused Full Stack Python Web Developer building the Backend of Websites and Web Applications that
+        leads to the success of the overall product
+      </p>
+    </div>
+    <div class="home-hero__cta">
+      <a href="./#projects" class="btn btn--bg">Projects</a>
+    </div>
+  </div>
+  <div class="home-hero__socials">
+    <div class="home-hero__social">
+      <a href="https://www.linkedin.com/in/pawan-gupta03/" class="home-hero__social-icon-link">
+        <img src="{%static 'images/linkedin-ico.png'%}" alt="icon" class="home-hero__social-icon" />
+      </a>
+    </div>
+    <div class="home-hero__social">
+      <a href="https://github.com/pawangupta5071" class="home-hero__social-icon-link">
+        <img src="{%static 'images/github-ico.png'%}" alt="icon" class="home-hero__social-icon" />
+      </a>
+    </div>
+    <div class="home-hero__social">
+      <a href="https://twitter.com/pawan_____gupta" class="home-hero__social-icon-link">
+        <img src="{%static 'images/twitter-ico.png'%}" alt="icon" class="home-hero__social-icon" />
+      </a>
+    </div>
+    <div class="home-hero__social">
+      <a href="https://www.instagram.com/pawan_____gupta/" class="home-hero__social-icon-link home-hero__social-icon-link--bd-none">
+        <img src="{%static 'images/insta-ico.png'%}" alt="icon" class="home-hero__social-icon" />
+      </a>
+    </div>
+  </div>
+  <div class="home-hero__mouse-scroll-cont">
+    <div class="mouse"></div>
+  </div>
+</section>
+<section id="about" class="about sec-pad">
+  <div class="main-container">
+    <h2 class="heading heading-sec heading-sec__mb-med">
+      <span class="heading-sec__main">About Me</span>
+      <span class="heading-sec__sub">
+        Here you will find more information about me, what I do, and my current skills mostly in terms of programming
+        and technology
+      </span>
+    </h2>
+    <div class="about__content">
+      <div class="about__content-main">
+        <h3 class="about__content-title">Get to know me!</h3>
+        <div class="about__content-details">
+          <p class="about__content-details-para">
+            I'm a
+            <strong>Python Developer</strong>
+            building the Front-end of Websites and Web Applications that leads to the success of the overall product.
+            Check out some of my work in the
+            <strong>Project</strong> section.
+
+          </p>
+          <p class="about__content-details-para">
+            I also like sharing content related to the stuff that I have learned over the years in <strong>Web
+              Development</strong> so it can help other people of the Dev Community. Feel free to Connect or Follow me
+            on my <a rel="noreferrer" href="https://www.linkedin.com/in/pawan-gupta03/" target="_blank">Linkedin</a>  where I post useful content related to Web Development and Programming.
+
+          </p>
+          </p>
+          <p class="about__content-details-para">
+            I'm open to <strong>job</strong> opportunities where I can contribute, learn and grow. If you have a good
+            opportunity that matches my skills and experience then don't hesitate to
+            <strong>contact</strong> me.
+          </p>
+        </div>
+        <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr">Contact</a>
+      </div>
+      <div class="about__content-skills">
+        <h3 class="about__content-title">My Skills</h3>
+        <div class="skills">
+          <div class="skills__skill">PYTHON</div>
+          <div class="skills__skill">DJANGO</div>
+          <div class="skills__skill">JavaScript</div>
+          <div class="skills__skill">BootStrap</div>
+          <div class="skills__skill">DjangoRestFramework</div>
+          <div class="skills__skill">GIT</div>
+          <div class="skills__skill">Github</div>
+          <div class="skills__skill">MySql</div>
+          <div class="skills__skill">Html</div>
+          <div class="skills__skill">Css</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects" class="projects sec-pad">
+  <div class="main-container">
+    <h2 class="heading heading-sec heading-sec__mb-bg">
+      <span class="heading-sec__main">Projects</span>
+      <span class="heading-sec__sub">
+        Here you will find some of the personal and clients projects that I created with each project containing its own
+        case study
+      </span>
+    </h2>
+    {%for post in posts%}
+    <div class="projects__content">
+      <div class="projects__row">
+        <div class="projects__row-img-cont">
+          <img src="{{post.thumbnail.url}}" alt="Software Screenshot" class="projects__row-img" loading="lazy" />
+        </div>
+        <div class="projects__row-content">
+          <h3 class="projects__row-content-title">{{post.headline}}</h3>
+          <p class="projects__row-content-desc">
+            {{post.sub_headline}}
+          </p>
+
+
+          <a href="{% url "post" post.slug%}" class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          <br>
+          <ul>
+            {%for tag in post.tags.all %}
+            <span style="display: inline-block;
+                    color: #fff;
+                    background-color: #888;
+                    border-radius: 5px;
+                    margin: 2px;
+                    padding: 2px 5px;
+                    font-size: 12px;">{{tag}}</span>
+            {%endfor %}
+            <ul>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+    {%empty%}
+    <h3>NO post found...</h3>
+
+    {%endfor %}
+    <br>
+    <button style="color: #0062b9;
+        background: #fff;
+        border: 2px solid #0062b9;
+        box-shadow: none;
+        padding: calc(1.5rem - 2px) calc(5rem - 2px);"><a href="{%url 'posts'%}">More Projects...</a></button>
+
+  </div>
+</section>
+<section id="contact" class="contact sec-pad dynamicBg">
+  <div class="main-container">
+    <h2 class="heading heading-sec heading-sec__mb-med">
+      <span class="heading-sec__main heading-sec__main--lt">Contact</span>
+      <span class="heading-sec__sub heading-sec__sub--lt">
+        Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
+      </span>
+    </h2>
+    <div class="contact__form-container">
+      <form  class="contact__form" method="POST" action="{% url 'send_email' %}">
+        {% csrf_token %}
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="name">Name</label>
+          <input required placeholder="Enter Your Name" type="text" class="contact__form-input" name="name" id="name" />
+        </div>
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="subject">subject</label>
+          <input required placeholder="Enter Your subject" type="text" class="contact__form-input" name="subject" id="subject" />
+        </div>
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="email">Email</label>
+          <input required placeholder="Enter Your Email" type="text" class="contact__form-input" name="email"
+            id="email" />
+        </div>
+        <div class="contact__form-field">
+          <label class="contact__form-label" for="message">Message</label>
+          <textarea required cols="30" rows="10" class="contact__form-input" placeholder="Enter Your Message"
+            name="message" id="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn--theme contact__btn">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
