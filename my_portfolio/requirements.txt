@@ -1,6 +1,5 @@
 asgiref==3.6.0
 Django==3.2.16
-django-ckeditor==3.6.2
 django-crispy-forms==1.14.0
 django-filter==22.1
 django-js-asset==2.0.0
