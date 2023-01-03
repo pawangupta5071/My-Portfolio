@@ -144,11 +144,10 @@
 
     {%endfor %}
     <br>
-    <button style="color: #0062b9;
-        background: #fff;
-        border: 2px solid #0062b9;
-        box-shadow: none;
-        padding: calc(1.5rem - 2px) calc(5rem - 2px);"><a href="{%url 'posts'%}">More Projects...</a></button>
+    <button><a href="{% url "posts" %}" class="btn btn--med btn--theme-inv project-details__links-btn" target="_blank">MORE PROJECTS...</a></button>
+
+
+        
 
   </div>
 </section>

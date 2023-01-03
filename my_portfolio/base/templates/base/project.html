@@ -12,11 +12,11 @@
     </div>
     {% if post.live_url %}
     <div class="project-cs-hero__cta">
-      <a href="{{post.live_url}}" class="btn btn--bg" target="_blank">Live Link</a>
+      <a href="{{post.live_url}}" class="btn btn--bg" target="_blank">PROJECT LINK</a>
     </div>
     {% elif post.code_url %}
     <div class="project-cs-hero__cta">
-      <a href="{{post.code_url}}" class="btn btn--bg" target="_blank">Code Link</a>
+      <a href="{{post.code_url}}" class="btn btn--bg" target="_blank">CODE LINK</a>
     </div>
     {% else %}
     <div>
@@ -34,9 +34,9 @@
       <div class="project-details__content-main">
         <div class="project-details__desc">
           <h3 class="project-details__content-title">Project Overview</h3>
-          <h1 class="project-details__desc-para">
+          <p class="project-details__desc-para">
             {{post.body}}
-          </h1>
+          </p>
         </div>
         <div class="project-details__tools-used">
           <h3 class="project-details__content-title">Tools Used</h3>
@@ -54,8 +54,10 @@
           <a href="{{post.code_url}}" class="btn btn--med btn--theme-inv project-details__links-btn" target="_blank">Code Link</a>
           {% elif post.live_url %}
           <a href="{{post.live_url}}" class="btn btn--med btn--theme project-details__links-btn" target="_blank">Live Link</a>
+          <a href="{% url "home" %}" class="btn btn--med btn--theme-inv project-details__links-btn" target="_blank">GO BACK</a>
           {% elif post.code_url%}
-          <a href="{{post.code_url}}" class="btn btn--med btn--theme-inv project-details__links-btn" target="_blank">Code Link</a>
+          <a href="{{post.code_url}}" class="btn btn--med btn--theme project-details__links-btn" target="_blank">Code Link</a>
+          <a href="{% url "home" %}" class="btn btn--med btn--theme-inv project-details__links-btn" target="_blank">GO BACK</a>
           {% else %}
           <div><h2>No Live/Code Url for this project</h2></div>
           {% endif %}
