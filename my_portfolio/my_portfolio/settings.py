@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
 
     "base.apps.BaseConfig",
     
@@ -88,11 +90,11 @@ WSGI_APPLICATION = 'my_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'E1uTlEni28Ka7kvMARMh',
-        'HOST': 'containers-us-west-104.railway.app',
-        'PORT': '6708',
+        'NAME': 'pawandb_0774',
+        'USER': 'pawandb_0774_user',
+        'PASSWORD': 'xlLN0SlVBlbc5iDTpQxO8r2jJtD7a89B',
+        'HOST': 'dpg-cg537jseoogtrlvvjmo0-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
@@ -142,8 +144,16 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dnisfvlql',
+    'API_KEY': '143829381148952',
+    'API_SECRET': '6E4oAhqA1HuTuGIyuxKVD7wBhOg'
+}
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
