@@ -27,6 +27,9 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, null=True)
     slug= models.SlugField(null=True, blank=True)
 
+    class Meta:
+        ordering = ["created"]
+
     def __str__(self):
         return self.headline
 
