@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^s+!6$vivtur$3zu((m75rto#vh=e^^&*!*gn20pz#99c%)566'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["pawangupta.onrender.com",'127.0.0.1']
+ALLOWED_HOSTS = ["pawangupta.onrender.com", '127.0.0.1']
 
 
 # Application definition
@@ -41,12 +41,12 @@ INSTALLED_APPS = [
     'cloudinary',
 
     "base.apps.BaseConfig",
-    
+
     "crispy_forms",
 
     "django_filters",
 
-   
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -97,7 +97,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 
 # Password validation
@@ -151,9 +150,9 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': '6E4oAhqA1HuTuGIyuxKVD7wBhOg'
 }
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -167,7 +166,3 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'pkgupta5071453@gmail.com'
 EMAIL_HOST_PASSWORD = 'tvqkofiskhofifeh'
-
-
-
- 
