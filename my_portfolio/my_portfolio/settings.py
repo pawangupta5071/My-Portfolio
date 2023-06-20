@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'my_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pawandb_0774',
-        'USER': 'pawandb_0774_user',
-        'PASSWORD': 'xlLN0SlVBlbc5iDTpQxO8r2jJtD7a89B',
-        'HOST': 'dpg-cg537jseoogtrlvvjmo0-a.oregon-postgres.render.com',
+        'NAME': 'pawandb2',
+        'USER': 'pawan',
+        'PASSWORD': '20rZlpV1ILOqSV8BLjMyodmrYXa860CH',
+        'HOST': 'dpg-ci8j1munqql0ldbsjvpg-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
